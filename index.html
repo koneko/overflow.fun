@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://hub.koneko.link/cdn/icons/white_black.png" type="image/x-icon">
+    <title>overflow.fun</title>
+</head>
+<body>
+    <main>
+        <img src="https://hub.koneko.link/cdn/icons/white_black.png" width="128" height="128">
+        <a href="about">ABOUT</a>
+        <a href="projects">PROJECTS</a>
+        <a href="snippets">SNIPPETS</a>
+        <br>
+        <p class="muted">Made with 💖 by <a href="redirects/hub">hub</a>.<a href="redirects/github">koneko</a>.<a href="https://icannwiki.org/.link">link</a></p>
+    </main>
+</body>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+    }
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        gap: 1rem;
+        font-size: 30px;
+    }
+    a {
+        color: black;
+        text-decoration: none;
+    }
+    .inText {
+        animation: text 0.5s ease-in-out;
+        animation-fill-mode: forwards;  
+    }
+    .outText {
+        animation: reverse 0.5s ease-in-out;
+        animation-fill-mode: forwards;
+    }
+    .muted {
+        color: #999;
+        font-size: 16px;
+    }
+    p > a:hover {
+        color: #999;
+        text-decoration: none;
+        font-size: 16px;
+        animation: none;
+    }
+    @keyframes text {
+        50% {
+            color: #999999;
+            font-size: 48px;
+        }
+        100% {
+            color: #999999;
+            font-size: 48px;
+        }
+    }
+    
+    @keyframes reverse {
+        50% {
+            color: white;
+            font-size: 38px;
+        }
+        100% {
+            color: dodgerblue;
+            font-size: 30px;
+        }
+    }
+</style>
+<script>
+    const links = document.querySelectorAll("a");
+    links.forEach(link => {
+        link.addEventListener("mouseover", () => {
+            link.classList.add("inText");
+        });
+        link.addEventListener("mouseout", () => {
+            link.classList.remove("inText");
+            link.classList.add("outText");
+            setTimeout(() => {
+                link.classList.remove("outText");
+            }, 500);
+        });
+    });
+</script>
+</html>
